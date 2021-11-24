@@ -1,16 +1,23 @@
-package com.Foundry.GoRestAPI;
+package com.Foundry.GoRestAPI.Models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class GoRestUser {
     private String name;
     private String email;
     private String gender;
     private String status;
+    private String id;
 
     public GoRestUser(String name, String email, String gender, String status) {
         this.name = name;
         this.email = email;
         this.gender = gender;
         this.status = status;
+    }
+
+    public GoRestUser() {
     }
 
     public String getName() {
@@ -43,5 +50,13 @@ public class GoRestUser {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
